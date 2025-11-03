@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Personal AI Chatbot</title>
+  <style>
+    /* -------- Base Styling -------- */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f9fafc;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4a00e0, #8e2de2);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      padding: 50px 60px;
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      color: #4a00e0;
+      margin-top: 40px;
+      font-size: 1.8rem;
+      border-left: 5px solid #8e2de2;
+      padding-left: 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #333;
+      text-align: justify;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: #f3f0ff;
+      margin: 10px 0;
+      padding: 14px 16px;
+      border-left: 4px solid #8e2de2;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    ul li:hover {
+      transform: translateX(6px);
+      background: #ede7ff;
+    }
+
+    ol li {
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      letter-spacing: 0.5px;
+    }
+
+    /* -------- Responsive Design -------- */
+
+    @media (max-width: 900px) {
+      .container {
+        margin: 30px 20px;
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 30px 15px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 25px;
+        border-radius: 12px;
+        margin: 20px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin-top: 30px;
+      }
+
+      p, ul li, ol li {
+        font-size: 0.95rem;
+      }
+
+      ul li {
+        padding: 10px 12px;
+      }
+
+      footer {
+        font-size: 0.85rem;
+        padding: 18px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .container {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>About Personal AI Chatbot</h1>
+  </header>
+
+  <div class="container">
+    <p>
+      <strong>Personal AI Chatbot</strong> is a smart, multilingual virtual assistant designed to provide meaningful, real-time conversations across various topics such as health, fitness, motivation, finance, travel, and education.
+    </p>
+
+    <p>
+      Built with <strong>Flutter (frontend)</strong> and <strong>Flask (backend)</strong> and powered by <strong>Google’s Gemini AI</strong>, this application combines intelligent natural language understanding with a sleek, interactive user interface.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>Conversational AI (Gemini-powered):</strong> Uses Google’s Gemini API to generate intelligent, human-like responses based on user queries.</li>
+      <li><strong>Multilingual Chat Support:</strong> Switch easily between English, Hindi, and Kannada, with responses generated in the selected language.</li>
+      <li><strong>Dynamic Topics:</strong> Quick-topic buttons like Health Check-up, Goal Setting, and Study Tips for instant conversations.</li>
+      <li><strong>Interactive Chat Interface:</strong> Modern Flutter-based chat design featuring message bubbles, action chips, and a light/dark theme toggle.</li>
+      <li><strong>Persistent Conversation Context:</strong> Maintains history for contextually relevant and natural replies.</li>
+      <li><strong>Auto Reset & Inactivity Timer:</strong> Resets idle chats to keep conversations efficient and fresh.</li>
+      <li><strong>Integrated Animation & Design Polish:</strong> Includes Lottie animations and smooth transitions for a visually engaging experience.</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><strong>Frontend:</strong> Flutter (Dart)</li>
+      <li><strong>Backend:</strong> Flask (Python)</li>
+      <li><strong>AI Engine:</strong> Google Gemini API</li>
+      <li><strong>State Management:</strong> Provider</li>
+      <li><strong>Networking:</strong> HTTP requests</li>
+      <li><strong>Animations:</strong> Lottie</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <ol>
+      <li>The user enters a message or selects a predefined topic.</li>
+      <li>The message is sent via HTTP POST to the Flask backend.</li>
+      <li>Flask forwards the message and selected language to Gemini AI.</li>
+      <li>Gemini generates a concise, language-specific response.</li>
+      <li>The response is returned to the Flutter app and displayed in the chat interface.</li>
+    </ol>
+
+    <h2>Vision</h2>
+    <p>
+      This project demonstrates how AI, Flutter, and Flask can be integrated to build cross-platform, multilingual, intelligent assistants.
+      The goal is to create a personalized AI companion capable of communicating naturally, adapting to user preferences, and assisting in daily learning or productivity.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 Personal AI Chatbot — All Rights Reserved
+  </footer>
+
+</body>
+</html>

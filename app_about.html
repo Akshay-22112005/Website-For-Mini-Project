@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Personal AI Chatbot</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #06330248, #000000);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 40px;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px #ff00cc, 0 0 40px #3333ff;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 20px #ff00cc, 0 0 40px #3333ff; }
+      50% { text-shadow: 0 0 25px #ffffff, 0 0 55px #8e2de2; }
+    }
+
+    .video-section {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .video-section h2 {
+      color: #ffffff;
+      font-size: 2rem;
+      text-shadow: 0 0 10px #d22c2c;
+      margin-bottom: 20px;
+    }
+
+    video {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px 8px rgba(46, 12, 158, 0.274);
+      transition: all 0.3s ease;
+    }
+
+    video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px 6px #004780;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      animation: pulse 3s infinite;
+    }
+
+    p {
+      color: #f0f0f0;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 8px 0;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    li:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Glowing floating orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(50px);
+      opacity: 0.5;
+      animation: float 8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .orb1 {
+      width: 250px;
+      height: 250px;
+      background: #ff00cc;
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+
+    .orb2 {
+      width: 300px;
+      height: 300px;
+      background: #3333ff;
+      bottom: 15%;
+      right: 10%;
+      animation-delay: 3s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-50px) translateX(50px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    /* -------------------- Responsive Design -------------------- */
+
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      .container {
+        padding: 30px;
+        margin: 40px 20px;
+      }
+      video {
+        width: 95%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .video-section h2 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+      li {
+        font-size: 0.95rem;
+      }
+      .orb1, .orb2 {
+        opacity: 0.3;
+        filter: blur(40px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 50px 15px 25px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      p, li {
+        font-size: 0.9rem;
+      }
+      video {
+        width: 100%;
+        max-width: 100%;
+      }
+      .orb1 {
+        width: 150px;
+        height: 150px;
+        top: 5%;
+        left: -10%;
+      }
+      .orb2 {
+        width: 200px;
+        height: 200px;
+        bottom: 10%;
+        right: -5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+
+  <header>
+    <h1>🎥 Welcome To Our Personal Chat Box</h1>
+  </header>
+
+  <div class="video-section">
+    <h2>THIS IS THE VIDEO HOW TO USE</h2>
+    <video controls autoplay muted loop>
+      <source src="Icon_Floder/Main Floder.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <p>Experience the interactive magic of Personal AI Chatbot.</p>
+  </div>
+
+  <div class="container">
+    <p><strong>Personal AI Chatbot</strong> is a smart, multilingual virtual assistant designed to provide meaningful, real-time conversations across various topics such as health, fitness, motivation, finance, travel, and education.</p>
+
+    <p>Built with <strong>Flutter (frontend)</strong> and <strong>Flask (backend)</strong> and powered by <strong>Google’s Gemini AI</strong>, this application combines intelligent natural language understanding with a sleek, interactive user interface.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>Conversational AI:</strong> Generates intelligent, human-like responses.</li>
+      <li><strong>Multilingual Support:</strong> English, Hindi, and Kannada.</li>
+      <li><strong>Dynamic Topics:</strong> Quick buttons for instant chats.</li>
+      <li><strong>Interactive Interface:</strong> Light/Dark theme, smooth animations.</li>
+      <li><strong>Persistent Context:</strong> Keeps replies relevant.</li>
+      <li><strong>Auto Reset:</strong> Refreshes idle chats.</li>
+      <li><strong>Integrated Animations:</strong> Lottie effects enhance UI polish.</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><strong>Frontend:</strong> Flutter (Dart)</li>
+      <li><strong>Backend:</strong> Flask (Python)</li>
+      <li><strong>AI Engine:</strong> Google Gemini API</li>
+      <li><strong>State Management:</strong> Provider</li>
+      <li><strong>Networking:</strong> HTTP requests</li>
+      <li><strong>Animations:</strong> Lottie</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <ol>
+      <li>User sends a message or selects a topic.</li>
+      <li>The message is sent via HTTP POST to Flask backend.</li>
+      <li>Flask forwards it to Gemini AI with language info.</li>
+      <li>Gemini generates a response and sends it back.</li>
+      <li>The Flutter app displays it elegantly.</li>
+    </ol>
+
+    <h2>Vision</h2>
+    <p>
+      This project merges AI, Flutter, and Flask to create a smart, multilingual assistant that adapts to user needs and enhances productivity through real-time conversations.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 Personal AI Chatbot — Created with 💫 by HACK STREET BOYS
+  </footer>
+
+</body>
+</html>

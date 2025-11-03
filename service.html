@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServicePro — Crazy Awesome Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fc;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #0078d7, #00b4db);
+      color: white;
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero button {
+      background-color: #ffe600;
+      color: #333;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .hero button:hover {
+      background-color: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services {
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 34px;
+      margin-bottom: 40px;
+      color: #0078d7;
+    }
+
+    .service-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .service-card h3 {
+      color: #0078d7;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about {
+      padding: 60px 30px;
+      background-color: #f1f5ff;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #0078d7;
+    }
+
+    .about p {
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      color: #333;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      padding: 80px 30px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background: linear-gradient(135deg, #0078d7, #00b4db);
+      color: white;
+    }
+
+    .contact h2 {
+      font-size: 34px;
+      margin-bottom: 40px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255,255,255,0.1);
+      padding: 40px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-container:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 25px rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.2);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    form input::placeholder, form textarea::placeholder {
+      color: rgba(255,255,255,0.8);
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #ffe600;
+      box-shadow: 0 0 8px #ffe600;
+      background: rgba(255,255,255,0.25);
+    }
+
+    form button {
+      background: linear-gradient(90deg, #ffe600, #ffcc00);
+      color: #333;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    form button:hover {
+      background: linear-gradient(90deg, #ffcc00, #ffe600);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255,230,0,0.4);
+    }
+
+    /* ---------- FLOATING BUBBLES ---------- */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      animation: float 12s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .bubble:nth-child(1) { width: 100px; height: 100px; top: 20%; left: 10%; animation-duration: 14s; }
+    .bubble:nth-child(2) { width: 80px; height: 80px; bottom: 25%; right: 15%; animation-duration: 10s; }
+    .bubble:nth-child(3) { width: 60px; height: 60px; top: 50%; left: 80%; animation-duration: 16s; }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0078d7;
+      color: white;
+    }
+
+    /* ---------- RESPONSIVE DESIGN ---------- */
+    @media (max-width: 1024px) {
+      header {
+        padding: 15px 25px;
+      }
+      .hero h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      nav a {
+        font-size: 15px;
+      }
+      .hero h2 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .services h2 {
+        font-size: 28px;
+      }
+      .service-card {
+        width: 90%;
+      }
+      .about p {
+        font-size: 16px;
+      }
+      .contact h2 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 22px;
+      }
+      nav a {
+        font-size: 14px;
+      }
+      .hero h2 {
+        font-size: 24px;
+      }
+      .hero button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      .about p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>ServicePro</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="about1.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Your Trusted Service Partner</h2>
+    <p>We deliver top-quality solutions for all your business needs, combining innovation and excellence.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>We build responsive and engaging websites for businesses and individuals.</p>
+      </div>
+      <div class="service-card">
+        <h3>App Design</h3>
+        <p>Creative mobile app designs that deliver exceptional user experiences.</p>
+      </div>
+      <div class="service-card">
+        <h3>Digital Marketing</h3>
+        <p>Grow your brand online with SEO, social media, and ad campaigns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      ServicePro is dedicated to providing world-class digital services that empower 
+      businesses to grow online. Our experienced team focuses on quality, innovation, and customer satisfaction.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 ServicePro | All Rights Reserved
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you! Your message has been sent.");
+    }
+  </script>
+</body>
+</html>
