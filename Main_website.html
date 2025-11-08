@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackStreet Boy - Crazy Web</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    } 
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #111, #000);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #0ff; }
+      to { text-shadow: 0 0 30px #f0f; }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .buttons a {
+      background: #0ff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #f0f;
+      transform: scale(1.1);
+    }
+
+    /* About section */
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .about h3 {
+      color: #0ff;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .cl_h3 {
+      height: 50px;
+      text-shadow: 0 0 10px rgb(166, 255, 0);
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    /* Team section */
+    .team {
+      text-align: center;
+      margin: 60px 0;
+      padding: 0 20px;
+    }
+
+    .team img {
+      width: 80%;
+      max-width: 320px;
+      height: auto;
+      border: 3px solid #0ff;
+      box-shadow: 0 0 25px #0ff;
+      border-radius: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+      background: rgba(255, 255, 255, 0.05);
+      color: #0ff;
+      font-weight: bold;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    /* --------------------
+       Responsive Design
+    -------------------- */
+    @media (max-width: 900px) {
+      nav ul {
+        gap: 15px;
+      }
+      nav h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .about h3 {
+        font-size: 1.5rem;
+      }
+      .about p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+      .buttons a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      .about p {
+        font-size: 0.95rem;
+      }
+      .team img {
+        width: 90%;
+      }
+      footer {
+        font-size: 0.9rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Website</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="app_about.html">About</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome To Our Personal Chat Box!</h2>
+    <div class="buttons">
+      
+      <a href="https://drive.google.com/file/d/10Kq58-I70Bucc25xaCDDnkbTwYiEDMQS/view?usp=sharing">Download</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h3>About This Page</h3>
+    <p>
+      Welcome to our crazy, creative corner of the internet! 🌌  
+      This page is built to showcase pure energy and imagination — a fusion of design, animation, and tech vibes.  
+      Dive into our project, explore the magic, and get inspired by what a small team with big dreams can create!
+    </p>
+  </section>
+
+  <section class="team">
+    <h3 class="cl_h3">Meet The Team</h3>
+    <img src="Icon_Floder/images.webp" alt="Team Pic">
+  </section>
+
+  <footer>
+    Team by @HackStreet Boy 💻⚡
+  </footer>
+
+</body>
+</html>
