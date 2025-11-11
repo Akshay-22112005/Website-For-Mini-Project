@@ -388,6 +388,16 @@
 
   <script>
     function submitForm(event) {
+    <form action="https://formspree.io/f/mvgvezwe" method="POST">
+  <label>Email:</label>
+  <input type="email" name="email" required placeholder="your@email.com" />
+  
+  <label>Message:</label>
+  <textarea name="message" placeholder="Tell us something cool!"></textarea>
+  
+  <button type="submit">Send</button>
+</form>
+
       event.preventDefault();
       alert("Thank you! Your message has been sent.");
     }
