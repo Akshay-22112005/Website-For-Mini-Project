@@ -20,7 +20,7 @@
         color: #e5e8e4;
         background: #02060b;
         overflow-x: hidden;
-        overflow-y: auto; /* allow vertical scroll on small screens */
+        overflow-y: auto;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
@@ -29,7 +29,6 @@
         text-decoration: none;
       }
 
-      /* ---- Canvas background with floating blobs ---- */
       .scene {
         position: fixed;
         inset: 0;
@@ -77,7 +76,6 @@
         }
       }
 
-      /* ---- Layout ---- */
       .wrap {
         position: relative;
         min-height: 100vh;
@@ -87,7 +85,6 @@
         padding: 56px;
       }
 
-      /* ensure wrap doesn't clip on tiny heights */
       @media (max-height: 640px) {
         .wrap {
           padding-top: 36px;
@@ -95,7 +92,6 @@
         }
       }
 
-      /* ---- Left content (fun bits) ---- */
       .left {
         padding: 32px;
         border-radius: 20px;
@@ -131,7 +127,6 @@
         border: 1px solid rgba(255, 255, 255, 0.03);
       }
 
-      /* ---- Crazy contact card ---- */
       .card {
         margin-top: 22px;
         padding: 18px;
@@ -165,7 +160,6 @@
         background: #ffd24a;
       }
 
-      /* ---- Form (right column) ---- */
       .side {
         align-self: start;
       }
@@ -215,7 +209,6 @@
         margin-top: 6px;
       }
 
-      /* ---- Fancy submit ---- */
       .actions {
         display: flex;
         justify-content: space-between;
@@ -252,7 +245,6 @@
         border-radius: 10px;
       }
 
-      /* ---- Social / icons ---- */
       .social {
         display: flex;
         gap: 10px;
@@ -270,7 +262,6 @@
         cursor: pointer;
       }
 
-      /* ---- Micro-animations & confetti canvas ---- */
       .pulse {
         animation: pulse 2.6s infinite;
       }
@@ -292,46 +283,12 @@
         z-index: 60;
       }
 
-      /* ---- Small secure sign-in area ---- */
-      .signin-card {
-        margin-top: 12px;
-        padding: 12px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.03);
-      }
-      .signin-row {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-      }
-      .google-btn {
-        padding: 10px 12px;
-        border-radius: 10px;
-        font-weight: 700;
-        cursor: pointer;
-        border: 0;
-        background: linear-gradient(90deg, #ff8a8a, #ffd36b);
-        color: #04111a;
-      }
-      .email-link-btn {
-        padding: 10px 12px;
-        border-radius: 10px;
-        font-weight: 700;
-        cursor: pointer;
-        border: 1px dashed rgba(255, 255, 255, 0.06);
-        background: transparent;
-        color: #d9f7ff;
-      }
-
-      /* ---- Footer note ---- */
       .foot {
         margin-top: 18px;
         font-size: 13px;
         opacity: 0.85;
       }
 
-      /* ---- Accessibility focus styles ---- */
       input:focus,
       textarea:focus,
       select:focus {
@@ -339,7 +296,6 @@
         border-color: rgba(110, 163, 255, 0.9);
       }
 
-      /* ---- Mobile / small responsive tweaks ---- */
       @media (max-width: 980px) {
         .wrap {
           grid-template-columns: 1fr;
@@ -435,17 +391,12 @@
   </head>
   <body>
     <div class="scene" aria-hidden="true">
-      <div class="blob b1" style="mix-blend-mode: screen"></div>
+      <div class="blob b1"></div>
       <div class="blob b2"></div>
       <div class="blob b3"></div>
     </div>
 
-    <canvas
-      id="confetti"
-      width="1920"
-      height="1080"
-      aria-hidden="true"
-    ></canvas>
+    <canvas id="confetti" width="1920" height="1080" aria-hidden="true"></canvas>
 
     <main class="wrap" role="main">
       <section class="left" aria-labelledby="contact-title">
@@ -466,13 +417,7 @@
         </div>
 
         <div class="card" aria-hidden="false">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
+          <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
               <div style="font-weight: 800; font-size: 18px">Office status</div>
               <div class="extras">
@@ -493,20 +438,9 @@
             </div>
           </div>
 
-          <div
-            style="
-              margin-top: 12px;
-              display: flex;
-              gap: 8px;
-              align-items: center;
-            "
-          >
-            <button class="sbtn pulse" title="Twitch" aria-label="Twitch">
-              [...]
-            </button>
-            <button class="sbtn" title="Twitter" aria-label="Twitter">
-              [...]
-            </button>
+          <div style="margin-top: 12px; display: flex; gap: 8px; align-items: center;">
+            <button class="sbtn pulse" title="Twitch" aria-label="Twitch">[...]</button>
+            <button class="sbtn" title="Twitter" aria-label="Twitter">[...]</button>
             <button class="sbtn" title="Email" aria-label="Email">[...]</button>
           </div>
 
@@ -519,7 +453,6 @@
       </section>
 
       <aside class="side" aria-labelledby="form-title">
-        <!-- IMPORTANT: This page intentionally DOES NOT collect passwords. -->
         <form
           id="crazyForm"
           action="https://formspree.io/f/mvgvezwe"
@@ -527,12 +460,7 @@
           novalidate
         >
           <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              margin-bottom: 10px;
-            "
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"
           >
             <div>
               <div style="font-weight: 800; font-size: 16px" id="form-title">
@@ -594,22 +522,8 @@
             </div>
           </div>
 
-            <div
-              id="signinStatus"
-              class="hint"
-              style="margin-top: 8px; opacity: 0.9"
-            ></div>
-          </div>
-
           <div class="actions">
-            <div
-              style="
-                display: flex;
-                gap: 8px;
-                align-items: center;
-                flex-wrap: wrap;
-              "
-            >
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
               <button type="button" id="sprinkle" class="ghost">
                 Sprinkle
               </button>
@@ -633,272 +547,7 @@
             style="margin-top: 10px; font-size: 13px; opacity: 0.9"
           ></div>
         </form>
-
-        <!-- Short note about auth: Replace firebaseConfig below with your own from Firebase console. -->
-        <div style="margin-top: 8px; font-size: 12px; opacity: 0.8">
-          Note: if you enable sign-in, set up a Firebase project and enable
-          Google & Email Link sign-in. This page will NOT show or store user
-          passwords.
-        </div>
       </aside>
     </main>
-
-    <!-- Firebase (for secure OAuth + email-link sign-in). You must supply your firebaseConfig. -->
-    <script type="module">
-      // Import Firebase v9+ modules from CDN (ESM). No passwords are collected here.
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-      import {
-        getAuth,
-        GoogleAuthProvider,
-        signInWithPopup,
-        sendSignInLinkToEmail,
-        isSignInWithEmailLink,
-        signInWithEmailLink,
-      } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-
-      // TODO: replace with your Firebase project's config
-      const firebaseConfig = {
-        apiKey: "REPLACE_WITH_YOUR_API_KEY",
-        authDomain: "REPLACE_WITH_YOUR_PROJECT.firebaseapp.com",
-        projectId: "REPLACE_WITH_YOUR_PROJECT_ID",
-        // ... rest of config
-      };
-
-      // initialize app
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-
-      const googleBtn = document.getElementById("googleSignIn");
-      const emailLinkBtn = document.getElementById("emailLinkBtn");
-      const signinStatus = document.getElementById("signinStatus");
-
-      googleBtn.addEventListener("click", async () => {
-        signinStatus.textContent = "";
-        const provider = new GoogleAuthProvider();
-        try {
-          const result = await signInWithPopup(auth, provider);
-          // You get a user object but NOT their raw password. This is safe.
-          const user = result.user;
-          signinStatus.textContent = `Signed in as ${user.email}`;
-        } catch (err) {
-          console.error(err);
-          signinStatus.textContent = "Google sign-in failed. Check console.";
-        }
-      });
-
-      emailLinkBtn.addEventListener("click", async () => {
-        signinStatus.textContent = "";
-        const emailInput = document.getElementById("email");
-        const email = emailInput.value.trim();
-        if (!email) {
-          signinStatus.textContent =
-            "Please type your email in the Email field above first.";
-          return;
-        }
-
-        const actionCodeSettings = {
-          // URL you want to redirect back to. Replace with your site.
-          url: window.location.href,
-          handleCodeInApp: true,
-        };
-
-        try {
-          await sendSignInLinkToEmail(auth, email, actionCodeSettings);
-          window.localStorage.setItem("emailForSignIn", email);
-          signinStatus.textContent = "Sent sign-in link — check your inbox.";
-        } catch (err) {
-          console.error(err);
-          signinStatus.textContent = "Failed to send link. Check console.";
-        }
-      });
-
-      // If user opened the page via email link, complete sign-in
-      window.addEventListener("load", async () => {
-        try {
-          if (isSignInWithEmailLink(auth, window.location.href)) {
-            let email = window.localStorage.getItem("emailForSignIn");
-            if (!email) {
-              email = window.prompt(
-                "Please provide your email for confirmation"
-              );
-            }
-            if (email) {
-              const result = await signInWithEmailLink(
-                auth,
-                email,
-                window.location.href
-              );
-              document.getElementById(
-                "signinStatus"
-              ).textContent = `Signed in as ${result.user.email}`;
-              window.localStorage.removeItem("emailForSignIn");
-            }
-          }
-        } catch (err) {
-          console.error(err);
-        }
-      });
-
-      // ----- existing confetti + form code (kept as-is, minor adjustments) -----
-      const confettiCanvas = document.getElementById("confetti");
-      const ctx = confettiCanvas.getContext("2d");
-      let parts = [];
-
-      function resizeCanvas() {
-        confettiCanvas.width = window.innerWidth;
-        confettiCanvas.height = window.innerHeight;
-      }
-      window.addEventListener("resize", resizeCanvas);
-      resizeCanvas();
-
-      function spawnConfetti(x = window.innerWidth / 2, y = 100, count = 60) {
-        for (let i = 0; i < count; i++) {
-          parts.push({
-            x,
-            y,
-            vx: (Math.random() - 0.5) * 8,
-            vy: Math.random() * -6 - 2,
-            r: Math.random() * 6 + 4,
-            life: Math.random() * 90 + 60,
-            color: ["#ff6b6b", "#ffd93d", "#6b8cff", "#9affc4", "#c56bff"][
-              Math.floor(Math.random() * 5)
-            ],
-          });
-        }
-      }
-      function step() {
-        ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-        for (let i = parts.length - 1; i >= 0; i--) {
-          const p = parts[i];
-          p.vy += 0.2;
-          p.x += p.vx;
-          p.y += p.vy;
-          p.life--;
-          ctx.fillStyle = p.color;
-          ctx.beginPath();
-          ctx.ellipse(p.x, p.y, p.r, p.r * 0.6, 0, 0, Math.PI * 2);
-          ctx.fill();
-          if (p.life <= 0 || p.y > confettiCanvas.height + 30)
-            parts.splice(i, 1);
-        }
-        requestAnimationFrame(step);
-      }
-      step();
-
-      // playful interactions
-      const form = document.getElementById("crazyForm");
-      const status = document.getElementById("status");
-      const submitBtn = document.getElementById("submitBtn");
-      const sprinkle = document.getElementById("sprinkle");
-      const randomize = document.getElementById("randomize");
-
-      sprinkle.addEventListener("click", () => {
-        spawnConfetti(
-          Math.random() * window.innerWidth,
-          Math.random() * 200 + 40,
-          24
-        );
-        status.textContent = "Sprinkled some joy ✨";
-      });
-
-      const randomPhrases = [
-        "I have an idea that involves rubber ducks and machine learning.",
-        "Can we trade my leftover pizza for a sponsorship?",
-        "Your site is epic — let's build something stranger.",
-        "You dropped a crumb of genius. Please pick it up.",
-        "Is this form recording my aura? Asking for a friend.",
-      ];
-      randomize.addEventListener("click", () => {
-        document.getElementById("message").value =
-          randomPhrases[Math.floor(Math.random() * randomPhrases.length)];
-        status.textContent = "Message randomized — go wild.";
-      });
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        status.textContent = "";
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-        if (!name || !email || !message) {
-          status.textContent =
-            "Oops — fill name, email & a message to make our robot happy.";
-          spawnConfetti(Math.random() * window.innerWidth, 200, 16);
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Beaming to the mothership...";
-
-        try {
-          const formData = new FormData(form);
-          const response = await fetch(form.action, {
-            method: form.method,
-            body: formData,
-            headers: { Accept: "application/json" },
-          });
-
-          if (response.ok) {
-            submitBtn.textContent = "Sent!";
-            spawnConfetti(window.innerWidth / 2, 150, 120);
-            status.textContent =
-              "We received your message — expect a reply soon 🎉";
-            form.reset();
-          } else {
-            status.textContent =
-              "Hmm, something went wrong. Try again later 😕";
-          }
-        } catch (err) {
-          status.textContent = "Network error — check your connection.";
-        }
-
-        submitBtn.disabled = false;
-      });
-
-      // silly keyboard secret: press C H A O S
-      let keySeq = "";
-      window.addEventListener("keydown", (ev) => {
-        keySeq += ev.key.toLowerCase();
-        if (keySeq.length > 10) keySeq = keySeq.slice(-10);
-        if (keySeq.includes("chaos")) {
-          spawnConfetti(Math.random() * window.innerWidth, 120, 160);
-          keySeq = "";
-          status.textContent = "CHAOS mode activated!";
-        }
-      });
-
-      // accessibility hints
-      form.addEventListener("focusin", () => {
-        status.textContent =
-          "Use Tab to move between fields, Enter to submit — or click the rainbow button.";
-      });
-      form.addEventListener("focusout", () => {
-        setTimeout(() => {
-          status.textContent = "";
-        }, 2200);
-      });
-
-      // animate blobs with mouse
-      function updateBlobs(clientX, clientY) {
-        const x = (clientX / window.innerWidth - 0.5) * 40;
-        const y = (clientY / window.innerHeight - 0.5) * 40;
-        document.querySelectorAll(".blob").forEach((b, i) => {
-          b.style.transform = `translate(${x * (i + 1) * 0.2}px, ${
-            y * (i + 1) * 0.15
-          }px) scale(${1 + 0.02 * i})`;
-        });
-      }
-      document.addEventListener("mousemove", (e) =>
-        updateBlobs(e.clientX, e.clientY)
-      );
-      document.addEventListener(
-        "touchmove",
-        (e) => {
-          if (e.touches && e.touches[0])
-            updateBlobs(e.touches[0].clientX, e.touches[0].clientY);
-        },
-        { passive: true }
-      );
-    </script>
   </body>
 </html>
