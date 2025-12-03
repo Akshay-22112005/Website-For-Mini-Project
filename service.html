@@ -279,26 +279,14 @@
         gap: 10px;
         text-align: center;
       }
-      nav a {
-        font-size: 15px;
-      }
       .hero h2 {
         font-size: 28px;
       }
       .hero p {
         font-size: 16px;
       }
-      .services h2 {
-        font-size: 28px;
-      }
       .service-card {
         width: 90%;
-      }
-      .about p {
-        font-size: 16px;
-      }
-      .contact h2 {
-        font-size: 28px;
       }
     }
 
@@ -306,18 +294,12 @@
       header h1 {
         font-size: 22px;
       }
-      nav a {
-        font-size: 14px;
-      }
       .hero h2 {
         font-size: 24px;
       }
       .hero button {
         padding: 10px 20px;
         font-size: 14px;
-      }
-      .about p {
-        font-size: 15px;
       }
     }
   </style>
@@ -388,16 +370,17 @@
 
   <script>
     function submitForm(event) {
-    <form action="https://formspree.io/f/mvgvezwe" method="POST">
-  <label>Email:</label>
-  <input type="email" name="email" required placeholder="your@email.com" />
-  
-  <label>Message:</label>
-  <textarea name="message" placeholder="Tell us something cool!"></textarea>
-  
-  <button type="submit">Send</button>
-</form>
 
+    
+      <form action="https://formspree.io/f/mvgvezwe" method="POST">
+        <label>Email:</label>
+        <input type="email" name="email" required placeholder="your@email.com" />
+        <label>Message:</label>
+        <textarea name="message" placeholder="Tell us something cool!"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    
+    
       event.preventDefault();
       alert("Thank you! Your message has been sent.");
     }
